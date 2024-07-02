@@ -50,3 +50,14 @@ func (m Map) Equal(o Map) bool {
 
 	return true
 }
+
+func (m Map) Keys() Set {
+	keys := make([]string, len(m))
+	var i int
+	for k := range m {
+		keys[i] = k
+		i++
+	}
+
+	return New(keys...)
+}
